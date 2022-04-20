@@ -1,7 +1,8 @@
 package main
 
 import (
-	"golesson/arrays"
+	"fmt"
+	"golesson/project"
 )
 
 func main() {
@@ -9,5 +10,17 @@ func main() {
 	//conditionals.Demo1()
 	//conditionals.Demo2()
 	//conditionals.WorkShop1()
-	arrays.Demo3()
+	//arrays.Demo3()
+
+	product, err := project.AddProduct()
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(product)
+
+	products, _ := project.GetAllProducts()
+
+	for _, product := range products {
+		fmt.Println(product.ProductName)
+	}
 }
